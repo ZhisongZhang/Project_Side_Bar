@@ -1,0 +1,767 @@
+html {
+    height:100%;
+    width:100%;
+    margin: 0px;
+}
+
+
+body
+{
+    margin: 0px;
+    padding: 0px;
+    background-color: #fffbff;
+    color: #003399;
+    font-family: /* Tahoma, */ Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+    display:table;
+    height:100%;
+    width:100%;
+}
+
+div.divMainContainer {
+    margin: 0px; 
+    
+    height: 100%; 
+    width: 100%;
+}
+
+a:link
+{
+	color: #104676;
+}
+
+a:visited
+{
+	color: #104676;
+}
+
+a:hover
+{
+	color: #104676;
+}
+
+a:active
+{
+	color: #104676;
+}
+
+
+/********************** Tooltips ******************************/
+.Help  /* Help icon ("?") on which tooltips appear */
+{
+    padding: 1px 3px 1px 3px;
+    border-style: dotted;
+    border-width: 1px;
+    cursor: help;
+}
+
+.Tooltip
+{
+    position: relative;
+}
+
+.Tooltip span
+{
+    display: none;
+    font-size: smaller;
+    color: #000066;
+    text-decoration: none;
+}
+
+.Tooltip:hover
+{
+    background-color: #99CCFF;
+}
+
+.Tooltip:hover span      /* Note: This doesn't work with IE 6 */
+{
+    display: block;
+    position: absolute;
+    text-align: left;
+    width: 300px;
+    top: 30px;
+    left: 30px;
+    background: #e6ecff;
+    border: 1px solid #003399;
+    padding: 3px;
+    text-decoration: none;
+    opacity: .8;
+}
+/********************** Tooltips ******************************/
+
+/********************** Header ******************************/
+a:link.PageTitle
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+a:visited.PageTitle
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+a:hover.PageTitle
+{
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+
+a:active.PageTitle
+{
+	color: #FFFFFF;
+}
+
+
+.Header
+{
+    /* border-width: 1px;
+    border-bottom-style: solid; */
+    /* padding-top: 10px; */
+    text-align: left;
+    width: 100%;
+    vertical-align: middle;
+}
+
+div.PageTitle
+{
+    background-color: #00b2a9;
+    opacity: .8;
+    color: #fffbff;
+    font-size: 18px;
+    font-weight: bold;
+    /* padding: 0px; */
+    /* padding-left: 5px;
+    margin-left: -5px; */
+    margin-bottom: 10px;
+    text-decoration: none;
+    /* width: 779px; */
+}
+
+div.SiteMapPath
+{
+    padding-top: 5px;
+    font-size: 9px;
+}
+/********************** Header ******************************/
+
+/********************** Navigation Tree ******************************/
+.Menu
+{
+    border-style: none;
+    border-width: 1px;
+    border-color: #6b696b;
+    background-color: #6b696b;
+    padding: 11px;
+    left: 20px;
+    color: #fffbff;
+    margin-right: 3ex;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color:#201547
+    ;
+}
+
+a.TreeNode
+{
+	color: #fffbff;
+	text-decoration: none;
+}
+
+a:visited.TreeNode
+{
+	color: #fffbff;
+	/* background-color: blue; */
+}
+
+.TreeNode
+{
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 5px;
+    margin-right: 5px;
+    transition: all .2s ease-in;
+}
+
+.TreeRootNode
+{
+}
+
+.TreeParentNode
+{
+/*	color: #006400; */
+    font-weight: bolder;
+    text-decoration:underline;
+}
+
+.TreeLeafNode
+{
+}
+
+.TreeSelectedNode
+{
+    font-weight: bold;
+    background-color: #00b2a9;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.TreeHoverNode
+{
+    background-color: #00b2a9;
+    opacity: .9;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    transform: scale(1.05);
+    /*text-decoration: none;*/
+}
+
+.MenuUserName
+{
+    font-size: 10pt;
+}
+
+.FlagIcons
+{
+    text-align: center;
+    /* These values would probably have to be adjusted if custom flag icons
+       with a different size than the default are used: */
+    word-spacing: 3px;
+    line-height: 1.5;
+}
+/********************** Navigation Tree ******************************/
+
+
+.Content
+{
+    vertical-align: top;
+}
+
+h1      /* Page Title in Content area */
+{
+/*
+    font-family: 'Arial Rounded MT Bold', Arial, Helvetica, sans-serif;
+    font-size: x-large;
+*/
+    color: #003399;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 0px;
+}
+
+.Footer
+{
+    /* width: 750px; */
+    font-size: 8pt;
+    text-align: center;
+    word-spacing: 2px;
+    padding-top: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    /*position: relative;*/
+    width: 100%;
+    left: 0px;
+    clear: both;
+    z-index:9;
+}
+
+div.Footer a
+{
+	padding-right: 10px;
+	color: #104676;
+	text-decoration:none;
+	font-weight:100;
+}
+
+div.Footer a:visited
+{
+/*	color: #005588; */
+	color: #2277aa;
+}
+
+div.Footer a:hover
+{
+	color: #005588;
+	text-decoration: underline;
+}
+
+/********************** Tables & Forms ******************************/
+.Table
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    border: 2px solid #fffbff;
+    background-color: #fffbff; /* #EFF3FB; */ /* #F7F7DE; */
+    border-collapse: collapse;
+}
+
+.TablePadding td
+{
+    padding: 3px;
+}
+
+.TableHeader, .TableHeader td, .TableHeader th
+{
+    color: White;
+    background-color: #201547; /* #6B696B; */
+    opacity: .75;
+    font-weight: bold;
+    text-align: center;
+/*    padding-top: 3px;
+    padding-bottom: 3px;*/
+    padding: 5px;
+}
+
+.OuterTable
+{
+/*    font-family: Verdana, Arial, Helvetica, sans-serif;
+    background-color: #F5F5F5; /* #EFF3FB; */ /* #F7F7DE; */
+/*    border-collapse: collapse;*/
+    border: 0px none;
+    cursor: default;  /* Prevent the edit cursor from appearing over text although text cannot be selected in the Infragistics grid */
+}
+
+.InnerTableHeaderAndCell
+{
+    border: 1px solid #cccccc;
+}
+
+.InnerTableHeader
+{
+    color: White;
+    background-color: #104676; /* #6B696B; */
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.InnerTableHeaderDisabledSorting
+{
+    cursor: default;  /* For column headers where sorting is disabled, don't show the pointer (hand) cursor, but the default cursor */
+}
+
+.InnerTableCell
+{
+    padding: 3px;
+}
+
+.InnerTableActionCell /* Cells in the Action column; prevent icons from being wrapped */
+{
+    white-space: nowrap;
+}
+
+.InnerTableActionCell img  /* img tags in the Action column */
+{
+    /* Don't show a border for hyperlink images */
+    border-style: none;
+}
+
+.InnerTableActionCell input  /* input tags in the Action column */
+{
+    /* Show the hand cursor for ImageButtons (icons) instead of the default cursor */
+    cursor: pointer;
+}
+
+.DisabledImageButton /* Disabled image buttons in the Action column; show as kind of "greyed-out" */
+{
+    opacity: 0.3;                   /* CSS 3 property; works with Firefox > 1.5 */
+    filter: alpha(opacity=30);      /* Workaround for IE < 8, does the same as opacity */
+}
+
+.InnerTableSelectedRow
+{
+    border-style: inset;
+    border-width: 5px;
+    background-color: #FFEFBB;
+}
+
+.InnerTableFirstColumnCell
+{
+    text-align: center;
+}
+
+.WizardButton
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #284775;
+    background-color: #FFFBFF;
+    border-color: #CCCCCC;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/* All textboxes with a validator control next to it cannot be 100% wide because
+   if the validator (*) is shown, it would be wrapped in the next line. So make
+   textboxes (input tags) and also drop-down lists (select tags) a bit smaller. */
+.TextBoxesWithValidator input[type=text]  /* Note: [type=text] is not supported by IE 6 */
+{
+    width: 92%;
+}
+.TextBoxesWithValidator select
+{
+    width: 94%;
+}
+
+.TooManyItemsWarning
+{
+    font-weight: bold;
+    font-style: italic;
+    color: #C14E00;  /* dark orange */
+    margin-bottom: 10px;
+}
+
+/********************** Tables & Forms ******************************/
+
+.Error
+{
+    color: #FF0000;
+    font-weight: bold;
+}
+
+.Success
+{
+    color: green;
+    font-weight: bold;
+}
+
+
+/********************** Status Messages ******************************/
+.StatusMessageInfo
+{
+    background-color: #9FCF9F;
+}
+
+.StatusMessageWarning
+{
+    background-color: #FFEF9F;
+}
+
+.StatusMessageAlert
+{
+    background-color: #FF9F9F;
+}
+
+/********************** Reference Data Shop ******************************/
+.OrderStateProcessing
+{
+    background-color: Yellow;
+}
+
+.OrderStateFinished
+{
+    background-color: Lime;
+}
+
+.OrderStateFailed
+{
+    background-color: Red;
+}
+
+.OrderTotalValuesLine
+{
+    font-weight: bold;
+}
+
+/*******************************************************************************
+ * Order view page
+ *******************************************************************************/
+
+/* Appearance of the "VRS" string in table in order view, to signal the user
+   that the coordinates show up when he moves the mouse cursor over the string */
+.VrsCoordinate {
+	border-bottom-style: dotted;
+	border-bottom-width: thin;
+	border-bottom-color: black;
+	cursor: help;
+	color: blue;
+}
+
+.Note
+{
+    font-size: smaller;
+}
+
+/********************** Progressbar Background ******************************/
+.ProgressBarBackGroundColor
+{
+    background-color: Gray;
+}
+
+.ProgressBarForeGroundColor
+{
+    background-color: Yellow;
+}
+
+/********************** Order Item Details ******************************/
+.EpochsMissingColor
+{
+    background-color: Red;
+}
+
+.GenerationResultFailed
+{
+    color: Red;
+}
+
+.GenerationResultPassed
+{
+    color: Green;
+}
+
+.GenerationResultIdle
+{
+    color: Orange;
+}
+
+
+/********************** Calendar ******************************/
+.CalendarFrame
+{
+    background-color: #104676;
+    color: White;
+}
+
+.CalendarContent
+{
+    background-color: #F5F5F5;
+    color: Black;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+/********************** Subscriptions ******************************/
+.SubscriptionInTheFuture
+{
+    background-color: #FFEF9F;  /* yellow */
+}
+
+.SubscriptionWithUnapprovedFollowup
+{
+    background-color: #fffbff;  /* yellow */
+}
+
+.SubscriptionWithHighAmount
+{
+    background-color: Red;
+}
+
+/********************** Logins ******************************/
+.PrimaryLogin
+{
+   background-color: #FFEF9F;  /* yellow */
+}
+
+.LockedLogin
+{
+   background-color: #FF9F9F;  /* red */
+}
+
+/********************** Highlight ***************************/
+.Highlight
+{
+    background-color: #ffc107; /* bright yellow */
+}
+
+/********************** Resize Map depending on screen - Fixed Ratio  ***************************/
+.fixed-ratio-resize 
+{ 
+	/* basic responsive img */
+	max-width: 100%;
+	height: auto;
+	width: 975px\9; /* IE8 */
+}
+
+/************************** Zhisong cutomize style ************************************************/
+
+
+/*************** highlight textbox **************************/
+.form-line-active input:focus, .form-line-active textarea:focus {
+border: 2px solid #66afe9 !important;
+box-shadow: 0 0 3px rgba(102, 175, 233, 0.6) !important;
+-moz-box-shadow: 0 0 3px #66afe9 !important;
+-webkit-box-shadow: 0 0 3px #66afe9 !important;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+}
+
+input:focus, textarea:focus, select:focus {
+border: 2px solid #66afe9 !important;
+box-shadow: 0 0 3px rgba(102, 175, 233, 0.6) !important;
+-moz-box-shadow: 0 0 3px #66afe9 !important;
+-webkit-box-shadow: 0 0 3px #66afe9 !important;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+}
+
+/***********Button********************/
+input[type=text] {
+    padding:5px; 
+    border:2px solid #66afe96e; 
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+	transition: .2s ease-in-out;
+}
+
+input[type=text]:focus {
+    border-color:#333;
+	transform: scale(1.05);
+}
+
+input[type=submit] {
+    padding:5px 15px; 
+    background:#2277aa; 
+    border:0 none;
+    color: white;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+    transition: .2s ease-in-out;
+}
+input[type=submit]:hover{
+	transform: scale(1.1);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+input[type=reset] {
+    padding:5px 15px; 
+    background:#ca1010; 
+    border:0 none;
+    color:white;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    transition: .2s ease-in-out; 
+}
+input[type=reset]:hover{
+	transform: scale(1.1);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+input[type=file] {
+    padding:5px 15px; 
+    background:#E0E0E0; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
+input[type=password] {
+    padding:5px 15px; 
+    background:rgba(102, 175, 233, 0.22);
+    border:1px none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
+
+select{
+	background-color:white;
+	-webkit-border-radius: 5px;
+    border-radius: 5px; 
+    border:2px none;
+    cursor:pointer;
+    color: black;
+	height: 25px;
+}
+select.multi{
+	background-color:white;
+	-webkit-border-radius: 5px;
+    border-radius: 5px; 
+    border:2px none;
+    cursor:pointer;
+    color: black;
+	height: 100px;
+}
+
+textarea{
+	padding:5px;
+	cursor:pointer;
+	-webkit-border-radius: 5px;
+    border-radius: 5px;
+    transition: .2s ease-in-out; 
+}
+
+textarea:focus{
+	transform: scale(1.05);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/********side bar URL style******/
+.wrapper{
+  position: sticky;
+  margin: 10% auto;
+  width: 400px;
+}
+
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+label.sb{
+  display: block;
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  border-right: none;
+  border-left: none;
+  font-weight:bold;
+}
+
+label.sb:hover{
+  background: #00b2a9;
+  color: white;
+  opacity: .8;
+}
+
+label.sb.last{
+  border-bottom: 1px solid #fff;
+}
+
+ul ul li{
+  padding: 10px;
+  background: #201547;
+  color: white;
+}
+button.sb{
+	position:absolute;
+	top:0;
+	right:0;
+}
+button.sb:hover{
+	background: #201547;
+	color: white;
+}
+
+
+input.sb[type="checkbox"]{
+  position: absolute;
+  left: -9999px;
+}
+
+input.sb[type="checkbox"] ~ ul{
+  height: 0;
+  transform: scaleY(0);
+}
+
+input.sb[type="checkbox"]:checked ~ ul{
+  height: 100%;
+  transform-origin: top;
+  transition: transform .2s ease-out;
+  transform: scaleY(1); 
+}
+
+input.sb[type="checkbox"]:checked + label{
+  background: #00b2a9;
+  color: white;
+  border-bottom: 1px solid #fff;
+}
+a.sb{
+	color:white;
+	text-decoration: none;
+}
+a.sb:hover{
+	background: #00b2a9;
+	color: white;
+}

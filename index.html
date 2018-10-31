@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/3w_Side_Bar.css">
+</head>
+
+<body>
+    
+    <div class="mainContent">
+    <!-- side bar start here -->
+    <div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;" id="rightMenu">
+        <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
+        <!-- Start of the side bar items -->
+        <div class="wrapper">
+            <ul>
+                <li>
+                    <input class="sb" type="checkbox" id="list-item-1">
+                    <label for="list-item-1" class="sb first">REG 13 Certificates</label>
+                    <ul>
+                        <li>
+                            <a href="./REG13/ALBU.pdf" class="sb w3-bar-item w3-button" target="_blank">ALBU</a>
+                        </li>
+                        <li>
+                            <a href="./REG13/ANGS.pdf" class="sb w3-bar-item w3-button" target="_blank">ANGS</a>
+                        </li>
+                        <li>
+                            <a href="./REG13/ANTW.pdf" class="sb w3-bar-item w3-button" target="_blank">ANTW</a>
+                        </li>
+                        <li>
+                            <a href="./REG13/APSL.pdf" class="sb w3-bar-item w3-button" target="_blank">APSL</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <input class="sb" type="checkbox" id="list-item-2">
+                    <label for="list-item-2" class="sb first">Value Added Resellers</label>
+                    <ul>
+                        <li>
+                            <a href="./GPSnet/VAR/Agriculture.html" class="sb w3-bar-item w3-button" target="_blank">Agriculture</a>
+                        </li>
+                        <li>
+                            <a href="./GPSnet/VAR/Construction.html" class="sb w3-bar-item w3-button" target="_blank">Construction</a>
+                        </li>
+                        <li>
+                            <a href="./GPSnet/VAR/Mapping.html" class="sb w3-bar-item w3-button" target="_blank">Mapping</a>
+                        </li>
+                        <li>
+                            <a href="./GPSnet/VAR/Survey.html" class="sb w3-bar-item w3-button" target="_blank">Survey</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <input class="sb" type="checkbox" id="list-item-3">
+                    <label for="list-item-3" class="sb first">External Links</label>
+                    <ul>
+                        <li>
+                            <a href="./GPSnet/Contact.html" class="sb w3-bar-item w3-button" target="_blank">Contact GPSnet</a>
+                        </li>
+                        <li>
+                            <a href="./GPSnet/About.html" class="sb w3-bar-item w3-button" target="_blank">About</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- side bar end here -->
+    <div class="w3-teal">
+        <button class="w3-button w3-teal w3-xlarge w3-right sb" onclick="openRightMenu()">&#9776;</button>
+    </div>
+    <!-- teal button end here -->
+    <div class="PageContent">this is the main content of the page</div>
+        
+    </div>
+    <footer>this is footer</footer>
+</body>
+<script>
+    function openRightMenu() {
+        document.getElementById("rightMenu").style.display = "block";
+    }
+    function closeRightMenu() {
+        document.getElementById("rightMenu").style.display = "none";
+    }
+</script>
+
+</html>
