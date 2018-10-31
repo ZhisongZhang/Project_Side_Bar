@@ -1,0 +1,364 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Trimble.IS.WebSite.Site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+	<script type="text/javascript">
+
+		function Log(str, jsonObj) {
+			if ('console' in window) {
+				var msg = str;
+				if (jsonObj != null && typeof (jsonObj) !== 'undefined') {
+					if ($.browser.chrome || $.browser.mozilla
+						|| ($.browser.msie && navigator.userAgent.indexOf('Edge') >= 0)) {
+						msg += JSON.stringify(jsonObj); //result.toSource()
+					}
+					//else if ($.browser.msie && navigator.userAgent.indexOf('Edge') < 0) {
+					//  Internet Explorer
+					//}
+				}
+
+				console.log(msg); 
+			}
+		}
+	</script>
+
+	<asp:ContentPlaceHolder ID="head" runat="server">
+		<%-- <meta> or <script> tags of pages will be inserted here --%>
+	</asp:ContentPlaceHolder>
+
+	<title>Dummy (this tag is never used - page title is set in code behind!)</title>
+
+	<script type="text/javascript">
+
+		function appendTimeOffset(formId) {
+			var d = new Date();
+			var from = document.forms[formId];
+			appendParam('uDate', d.getTimezoneOffset(), from);
+
+		}
+
+		function appendParam(pName, pVal, tForm) {
+			var n = document.createElement('input');
+			n.setAttribute('name', pName);
+			n.setAttribute('type', 'hidden');
+			n.setAttribute('value', pVal);
+
+			var f = document.getElementById(tForm);
+			if (!f) {
+				// When using single Form page or not specifying Form
+				f = document.forms[0];
+			}
+			// append the new Element to the Form!
+			f.appendChild(n);
+		}
+
+	</script>
+	
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78629029-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link rel="stylesheet" href="./3w_Side_Bar.css"> <!-- side bar style -->
+	<link href="Layout.css" rel="stylesheet" type="text/css" />
+	
+</head>
+<body id="MasterBodyTag" runat="server" dir="<%$ Resources:Global, TextDirection %>">
+<!-- side bar start here -->
+<div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none; right:0" id="mySidebar">
+                <button class="w3-bar-item w3-button w3-large"
+                onclick="w3_close()">Close &times;</button>
+<!-- Start of the side bar items -->
+  <div class="wrapper">
+        <ul>
+            <li>
+                <input class="sb" type="checkbox" id="list-item-1">
+                <label for="list-item-1" class="sb first">REG 13 Certificates</label>
+                <ul>
+                    <li><a href="./REG13/ALBU.pdf" class="sb w3-bar-item w3-button" target="_blank">ALBU</a></li>
+                    <li><a href="./REG13/ANGS.pdf" class="sb w3-bar-item w3-button" target="_blank">ANGS</a></li>
+                    <li><a href="./REG13/ANTW.pdf" class="sb w3-bar-item w3-button" target="_blank">ANTW</a></li>
+                    <li><a href="./REG13/APSL.pdf" class="sb w3-bar-item w3-button" target="_blank">APSL</a></li>
+                    <li><a href="./REG13/ARRT.pdf" class="sb w3-bar-item w3-button" target="_blank">ARRT</a></li>
+                    <li><a href="./REG13/BALL.pdf" class="sb w3-bar-item w3-button" target="_blank">BALL</a></li>
+                    <li><a href="./REG13/BALM.pdf" class="sb w3-bar-item w3-button" target="_blank">BALM</a></li>
+                    <li><a href="./REG13/BCUS.pdf" class="sb w3-bar-item w3-button" target="_blank">BCUS</a></li>
+                    <li><a href="./REG13/BEUA.pdf" class="sb w3-bar-item w3-button" target="_blank">BEUA</a></li>
+                    <li><a href="./REG13/BIGG.pdf" class="sb w3-bar-item w3-button" target="_blank">BIGG</a></li>
+                    <li><a href="./REG13/BIRC.pdf" class="sb w3-bar-item w3-button" target="_blank">BIRC</a></li>
+                    <li><a href="./REG13/BNDC.pdf" class="sb w3-bar-item w3-button" target="_blank">BNDC</a></li>
+                    <li><a href="./REG13/BNLA.pdf" class="sb w3-bar-item w3-button" target="_blank">BNLA</a></li>
+                    <li><a href="./REG13/BOLC.pdf" class="sb w3-bar-item w3-button" target="_blank">BOLC</a></li>
+                    <li><a href="./REG13/BOOL.pdf" class="sb w3-bar-item w3-button" target="_blank">BOOL</a></li>
+                    <li><a href="./REG13/BORT.pdf" class="sb w3-bar-item w3-button" target="_blank">BORT</a></li>
+                    <li><a href="./REG13/BUCH.pdf" class="sb w3-bar-item w3-button" target="_blank">BUCH</a></li>
+                    <li><a href="./REG13/CANR.pdf" class="sb w3-bar-item w3-button" target="_blank">CANR</a></li>
+                    <li><a href="./REG13/CBRA.pdf" class="sb w3-bar-item w3-button" target="_blank">CBRA</a></li>
+                    <li><a href="./REG13/CLAC.pdf" class="sb w3-bar-item w3-button" target="_blank">CLAC</a></li>
+                    <li><a href="./REG13/CLBN.pdf" class="sb w3-bar-item w3-button" target="_blank">CLBN</a></li>
+                    <li><a href="./REG13/CLYT.pdf" class="sb w3-bar-item w3-button" target="_blank">CLYT</a></li>
+                    <li><a href="./REG13/COBG.pdf" class="sb w3-bar-item w3-button" target="_blank">COBG</a></li>
+                    <li><a href="./REG13/CORY.pdf" class="sb w3-bar-item w3-button" target="_blank">CORY</a></li>
+                    <li><a href="./REG13/CRAN.pdf" class="sb w3-bar-item w3-button" target="_blank">CRAN</a></li>
+                    <li><a href="./REG13/CRSY.pdf" class="sb w3-bar-item w3-button" target="_blank">CRSY</a></li>
+                    <li><a href="./REG13/DORA.pdf" class="sb w3-bar-item w3-button" target="_blank">DORA</a></li>
+                    <li><a href="./REG13/DRGO.pdf" class="sb w3-bar-item w3-button" target="_blank">DRGO</a></li>
+                    <li><a href="./REG13/EBNK.pdf" class="sb w3-bar-item w3-button" target="_blank">EBNK</a></li>
+                    <li><a href="./REG13/ECHU.pdf" class="sb w3-bar-item w3-button" target="_blank">ECHU</a></li>
+                    <li><a href="./REG13/EMEL.pdf" class="sb w3-bar-item w3-button" target="_blank">EMEL</a></li>
+                    <li><a href="./REG13/EPSM.pdf" class="sb w3-bar-item w3-button" target="_blank">EPSM</a></li>
+                    <li><a href="./REG13/EURA.pdf" class="sb w3-bar-item w3-button" target="_blank">EURA</a></li>
+                    <li><a href="./REG13/GEES.pdf" class="sb w3-bar-item w3-button" target="_blank">GEES</a></li>
+                    <li><a href="./REG13/GELA.pdf" class="sb w3-bar-item w3-button" target="_blank">GELA</a></li>
+                    <li><a href="./REG13/GLDN.pdf" class="sb w3-bar-item w3-button" target="_blank">GLDN</a></li>
+                    <li><a href="./REG13/GLEN.pdf" class="sb w3-bar-item w3-button" target="_blank">GLEN</a></li>
+                    <li><a href="./REG13/GNOA.pdf" class="sb w3-bar-item w3-button" target="_blank">GNOA</a></li>
+                    <li><a href="./REG13/GORO.pdf" class="sb w3-bar-item w3-button" target="_blank">GORO</a></li>
+                    <li><a href="./REG13/HAMO.pdf" class="sb w3-bar-item w3-button" target="_blank">HAMO</a></li>
+                    <li><a href="./REG13/HATT.pdf" class="sb w3-bar-item w3-button" target="_blank">HATT</a></li>
+                    <li><a href="./REG13/HRSM.pdf" class="sb w3-bar-item w3-button" target="_blank">HRSM</a></li>
+                    <li><a href="./REG13/IRYM.pdf" class="sb w3-bar-item w3-button" target="_blank">IRYM</a></li>
+                    <li><a href="./REG13/KEPK.pdf" class="sb w3-bar-item w3-button" target="_blank">KEPK</a></li>
+                    <li><a href="./REG13/KILM.pdf" class="sb w3-bar-item w3-button" target="_blank">KILM</a></li>
+                    <li><a href="./REG13/KRNG.pdf" class="sb w3-bar-item w3-button" target="_blank">KRNG</a></li>
+                    <li><a href="./REG13/KTON.pdf" class="sb w3-bar-item w3-button" target="_blank">KTON</a></li>
+                    <li><a href="./REG13/LALB.pdf" class="sb w3-bar-item w3-button" target="_blank">LALB</a></li>
+                    <li><a href="./REG13/LCLA.pdf" class="sb w3-bar-item w3-button" target="_blank">LCLA</a></li>
+                    <li><a href="./REG13/LIPO.pdf" class="sb w3-bar-item w3-button" target="_blank">LIPO</a></li>
+                    <li><a href="./REG13/MAFF.pdf" class="sb w3-bar-item w3-button" target="_blank">MAFF</a></li>
+                    <li><a href="./REG13/MANY.pdf" class="sb w3-bar-item w3-button" target="_blank">MANY</a></li>
+                    <li><a href="./REG13/MARY.pdf" class="sb w3-bar-item w3-button" target="_blank">MARY</a></li>
+                    <li><a href="./REG13/MENO.pdf" class="sb w3-bar-item w3-button" target="_blank">MENO</a></li>
+                    <li><a href="./REG13/MIMI.pdf" class="sb w3-bar-item w3-button" target="_blank">MIMI</a></li>
+                    <li><a href="./REG13/MITT.pdf" class="sb w3-bar-item w3-button" target="_blank">MITT</a></li>
+                    <li><a href="./REG13/MLAK.pdf" class="sb w3-bar-item w3-button" target="_blank">MLAK</a></li>
+                    <li><a href="./REG13/MNSF.pdf" class="sb w3-bar-item w3-button" target="_blank">MNSF</a></li>
+                    <li><a href="./REG13/MOOR.pdf" class="sb w3-bar-item w3-button" target="_blank">MOOR</a></li>
+                    <li><a href="./REG13/MRNO.pdf" class="sb w3-bar-item w3-button" target="_blank">MRNO</a></li>
+                    <li><a href="./REG13/MRNT.pdf" class="sb w3-bar-item w3-button" target="_blank">MRNT</a></li>
+                    <li><a href="./REG13/MTBU.pdf" class="sb w3-bar-item w3-button" target="_blank">MTBU</a></li>
+                    <li><a href="./REG13/MURR.pdf" class="sb w3-bar-item w3-button" target="_blank">MURR</a></li>
+                    <li><a href="./REG13/MVIL.pdf" class="sb w3-bar-item w3-button" target="_blank">MVIL</a></li>
+                    <li><a href="./REG13/MYRT.pdf" class="sb w3-bar-item w3-button" target="_blank">MYRT</a></li>
+                    <li><a href="./REG13/NELN.pdf" class="sb w3-bar-item w3-button" target="_blank">NELN</a></li>
+                    <li><a href="./REG13/NEWH.pdf" class="sb w3-bar-item w3-button" target="_blank">NEWH</a></li>
+                    <li><a href="./REG13/OMEO.pdf" class="sb w3-bar-item w3-button" target="_blank">OMEO</a></li>
+                    <li><a href="./REG13/ORBO.pdf" class="sb w3-bar-item w3-button" target="_blank">ORBO</a></li>
+                    <li><a href="./REG13/PACH.pdf" class="sb w3-bar-item w3-button" target="_blank">PACH</a></li>
+                    <li><a href="./REG13/PIAN.pdf" class="sb w3-bar-item w3-button" target="_blank">PIAN</a></li>
+                    <li><a href="./REG13/PKVL.pdf" class="sb w3-bar-item w3-button" target="_blank">PKVL</a></li>
+                    <li><a href="./REG13/POCA.pdf" class="sb w3-bar-item w3-button" target="_blank">POCA</a></li>
+                    <li><a href="./REG13/PRTF.pdf" class="sb w3-bar-item w3-button" target="_blank">PRTF</a></li>
+                    <li><a href="./REG13/QCLF.pdf" class="sb w3-bar-item w3-button" target="_blank">QCLF</a></li>
+                    <li><a href="./REG13/RBVL.pdf" class="sb w3-bar-item w3-button" target="_blank">RBVL</a></li>
+                    <li><a href="./REG13/RNBO.pdf" class="sb w3-bar-item w3-button" target="_blank">RNBO</a></li>
+                    <li><a href="./REG13/RUTH.pdf" class="sb w3-bar-item w3-button" target="_blank">RUTH</a></li>
+                    <li><a href="./REG13/SEAL.pdf" class="sb w3-bar-item w3-button" target="_blank">SEAL</a></li>
+                    <li><a href="./REG13/SEMR.pdf" class="sb w3-bar-item w3-button" target="_blank">SEMR</a></li>
+                    <li><a href="./REG13/SKIP.pdf" class="sb w3-bar-item w3-button" target="_blank">SKIP</a></li>
+                    <li><a href="./REG13/SRVC.pdf" class="sb w3-bar-item w3-button" target="_blank">SRVC</a></li>
+                    <li><a href="./REG13/STAD.pdf" class="sb w3-bar-item w3-button" target="_blank">STAD</a></li>
+                    <li><a href="./REG13/STRH.pdf" class="sb w3-bar-item w3-button" target="_blank">STRH</a></li>
+                    <li><a href="./REG13/SWNH.pdf" class="sb w3-bar-item w3-button" target="_blank">SWNH</a></li>
+                    <li><a href="./REG13/TATU.pdf" class="sb w3-bar-item w3-button" target="_blank">TATU</a></li>
+                    <li><a href="./REG13/TELO.pdf" class="sb w3-bar-item w3-button" target="_blank">TELO</a></li>
+                    <li><a href="./REG13/THOM.pdf" class="sb w3-bar-item w3-button" target="_blank">THOM</a></li>
+                    <li><a href="./REG13/UNDE.pdf" class="sb w3-bar-item w3-button" target="_blank">UNDE</a></li>
+                    <li><a href="./REG13/WALW.pdf" class="sb w3-bar-item w3-button" target="_blank">WALW</a></li>
+                    <li><a href="./REG13/WBEE.pdf" class="sb w3-bar-item w3-button" target="_blank">WBEE</a></li>
+                    <li><a href="./REG13/WEDD.pdf" class="sb w3-bar-item w3-button" target="_blank">WEDD</a></li>
+                    <li><a href="./REG13/WEND.pdf" class="sb w3-bar-item w3-button" target="_blank">WEND</a></li>
+                    <li><a href="./REG13/WORI.pdf" class="sb w3-bar-item w3-button" target="_blank">WORI</a></li>
+                    <li><a href="./REG13/WOTG.pdf" class="sb w3-bar-item w3-button" target="_blank">WOTG</a></li>
+                    <li><a href="./REG13/WSEA.pdf" class="sb w3-bar-item w3-button" target="_blank">WSEA</a></li>
+                    <li><a href="./REG13/WYCH.pdf" class="sb w3-bar-item w3-button" target="_blank">WYCH</a></li>
+                    <li><a href="./REG13/YALL.pdf" class="sb w3-bar-item w3-button" target="_blank">YALL</a></li>
+                    <li><a href="./REG13/YANK.pdf" class="sb w3-bar-item w3-button" target="_blank">YANK</a></li>
+                    <li><a href="./REG13/YARS.pdf" class="sb w3-bar-item w3-button" target="_blank">YARS</a></li>
+                    <li><a href="./REG13/YIEL.pdf" class="sb w3-bar-item w3-button" target="_blank">YIEL</a></li>
+                    <li><a href="./REG13/YNKI.pdf" class="sb w3-bar-item w3-button" target="_blank">YNKI</a></li>
+                    <li><a href="./REG13/YRRM.pdf" class="sb w3-bar-item w3-button" target="_blank">YRRM</a></li>
+                </ul>
+            </li>
+            <li>
+                <input class="sb" type="checkbox" id="list-item-2">
+                <label for="list-item-2" class="sb first">Value Added Resellers</label>
+                <ul>
+                    <li><a href="./GPSnet/VAR/Agriculture.html" class="sb w3-bar-item w3-button" target="_blank">Agriculture</a></li>
+                    <li><a href="./GPSnet/VAR/Construction.html" class="sb w3-bar-item w3-button" target="_blank">Construction</a></li>
+                    <li><a href="./GPSnet/VAR/Mapping.html" class="sb w3-bar-item w3-button" target="_blank">Mapping</a></li>
+                    <li><a href="./GPSnet/VAR/Survey.html" class="sb w3-bar-item w3-button" target="_blank">Survey</a></li>
+                </ul>
+            </li>
+            <li>
+                <input class="sb" type="checkbox" id="list-item-3">
+                <label for="list-item-3" class="sb first">External Links</label>
+                <ul>
+                    <li><a href="./GPSnet/Contact.html" class="sb w3-bar-item w3-button" target="_blank">Contact GPSnet</a></li>
+                    <li><a href="./GPSnet/About.html" class="sb w3-bar-item w3-button" target="_blank">About</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+  
+</div>
+
+<!-- side bar end here -->
+<div id="main">
+	<div class="w3-teal">
+	<button id="openNav" class="w3-button w3-teal w3-xlarge w3-right sb" onclick="w3_open()">&#9776;</button>
+	<div class="w3-container">
+	</div>
+</div>
+	<!-- teal button end here -->
+
+
+	<!-- Main content start here -->
+	<form id="form1" style="margin: 0px; height: 100%; width: 100%; display: inline-table;" runat="server">
+		<asp:HiddenField ID="m_HiddenFieldPageGuid" runat="server" />
+		<asp:HiddenField ID="m_HiddenFieldShowContentOnly" runat="server" />
+		
+		<div class="divMainContainer">
+			<table id="idTableMainContainer" style="width: 100%; height: 100%; padding: 7px;" border="0" cellpadding="0" cellspacing="0">
+				<tr runat="server" valign="top" id="m_IdTrHeader">
+					<td>
+						<div class="Header">
+							<table style="width: 100%; padding-bottom: 5px;" border="0" cellpadding="0"
+								cellspacing="0">
+								<tr>
+									<td>
+										<a runat="server" href="<%$ Resources:Global, Master_HeaderLeftLogo_Url %>">
+											<asp:Image ID="Image1" runat="server" AlternateText="<%$ Resources:Global, Master_HeaderLeftLogo_Title %>"
+												ImageUrl="<%$ Resources:Global, Master_HeaderLeftLogo_ImageFile %>" BorderStyle="None" />
+										</a>
+									</td>
+									<td style="text-align: right; padding-right: 30px">
+										<a style="color: #33AAFF; font-size: 9px; text-decoration: none;" runat="server"
+											href="<%$ Resources:Global, Master_HeaderRightLogo_Url %>">
+											<asp:Image ID="Image2" runat="server" AlternateText="<%$ Resources:Global, Master_HeaderRightLogo_Title %>"
+												ImageUrl="<%$ Resources:Global, Master_HeaderRightLogo_ImageFile %>" BorderStyle="None" />
+											<br />
+											<asp:Literal ID="Literal2" runat="server"
+												Text="<%$ Resources:Global, Master_HeaderRightLogo_Title %>" />
+										</a>
+									</td>
+									<td>
+										<!-- teal start here -->
+									</td>
+								</tr>
+							</table>
+							<div class="PageTitle">
+								<a runat="server" class="PageTitle" href="~/">
+									<asp:Literal ID="m_LitWebSiteTitle" runat="server" Text="[Localized Web Site Title]">
+									</asp:Literal></a>
+								<br />
+								<div class="SiteMapPath">
+									<asp:SiteMapPath ID="m_SiteMapPath" runat="server">
+										<PathSeparatorStyle Font-Bold="True" ForeColor="#5D7B9D" />
+										<CurrentNodeStyle ForeColor="#333333" />
+										<NodeStyle Font-Bold="True" ForeColor="#7C6F57" />
+										<RootNodeStyle Font-Bold="True" ForeColor="#5D7B9D" />
+									</asp:SiteMapPath>
+									&nbsp;
+								</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr valign="top" style="height: 100%">
+					<td style="width: 100%; height: 100%;">
+						<table border="0" cellpadding="0" cellspacing="0" style="width: 100%; height: 100%;">
+							<tr>
+								<td runat="server" id="m_TdNavigationTreeView" style="vertical-align: top; width: 1%; padding: 0px; margin: 0px;">
+									<div class="Menu">
+										<table>
+											<tr><td>
+										<asp:TreeView ID="m_NavigationTreeView" runat="server" DataSourceID="m_SiteMapDataSource" Visible="true"
+											CollapseImageUrl="~/Images/NavArrowDown.gif" ExpandImageUrl="~/Images/NavArrowDown.gif"
+											NoExpandImageUrl="~/Images/NavArrowRight.gif">
+											<NodeStyle CssClass="TreeNode" />
+											<RootNodeStyle CssClass="TreeRootNode" />
+											<ParentNodeStyle CssClass="TreeParentNode" />
+											<LeafNodeStyle CssClass="TreeLeafNode" />
+											<HoverNodeStyle CssClass="TreeHoverNode" />
+											<SelectedNodeStyle CssClass="TreeSelectedNode" />
+										</asp:TreeView>
+
+											    </td></tr>
+											<tr><td>
+										<asp:SiteMapDataSource ID="m_SiteMapDataSource" runat="server" ShowStartingNode="False" />
+										<br />
+										<asp:LoginName ID="m_LoginName" runat="server" CssClass="MenuUserName"
+											FormatString="<%$ Resources:Global, Master_Text_LoggedInAs %>" />
+										<br />
+										<br />
+										<asp:Panel ID="m_PnlFlags" runat="server" CssClass="FlagIcons">
+											<%-- Flag icons are inserted here dynamically from the database --%>
+										</asp:Panel>
+
+											    </td></tr>
+
+										</table>
+									</div>
+								</td>
+								<td class="Content" valign="top" style="height: 100%;">
+									<h1 id="m_H1PageName" runat="server">
+										<asp:Label ID="m_LabelPageName" runat="server" Text="Page Title" />
+									</h1>
+
+									<div runat="server" id="m_DivSuccessMsg" visible="false" enableviewstate="False" class="Success">
+										<br />
+										<asp:Label ID="m_LblSuccessMsg" runat="server" EnableViewState="False"></asp:Label><br />
+										<br />
+									</div>
+									<div runat="server" id="m_DivErrorMsg" visible="false" enableviewstate="False" class="Error">
+										<br />
+										<asp:Label ID="m_LblErrorMsg" runat="server" EnableViewState="False"></asp:Label><br />
+										<br />
+									</div>
+
+									<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+									</asp:ContentPlaceHolder>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+				<tr runat="server" id="m_IdTrFooter" style="z-index: 9;">
+					<td>
+						<div class="Footer" id="m_DivFooter" runat="server">
+							<a>Dummy link 1</a>
+							<a>Dummy link 2</a>
+							<a>All dummy links get removed</a>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</div>
+</body>
+<script>
+	function w3_open() {
+		document.getElementById("main").style.marginRight = "25%";
+		document.getElementById("mySidebar").style.width = "25%";
+		document.getElementById("mySidebar").style.display = "block";
+		document.getElementById("openNav").style.display = 'none';
+	}
+	function w3_close() {
+		document.getElementById("main").style.marginRight = "0%";
+		document.getElementById("mySidebar").style.display = "none";
+		document.getElementById("openNav").style.display = "inline-block";
+	}
+</script>
+
+</html>
